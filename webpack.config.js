@@ -9,16 +9,18 @@ module.exports = {
     filename: "[name].js"
   },
   resolve: {
-    extensions: [".ts",".js",]
+    extensions: ['.ts','.js']
   },
   devServer: {
-    contentBase: path.join(__dirname,"dist"),
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
     open: true
   },
   module: {
     rules: [
       {
-        loader: "ts.loader",
+        loader: "ts-loader",
         test: /\.ts$/
       }
     ]
